@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengumuman Anggota OSIS 2024/2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1c20 0%, #2c3e50 100%);
+            min-height: 100vh;
+            padding: 20px 0;
+            color: #e0e0e0;
+            position: relative;
+        }
+
+        /* Background image overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.postimg.cc/L6MCGsVL/images-2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(30, 34, 42, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(45, 52, 54, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #00a8ff, #00ff7f);
+            animation: borderFlow 2s linear infinite;
+        }
+
+        @keyframes borderFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 100px;
+            margin-bottom: 30px;
+            perspective: 1000px;
+        }
+
+        .logo-wrapper {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            transform-style: preserve-3d;
+            animation: floatAnimation 3s ease-in-out infinite;
+        }
+
+        @keyframes floatAnimation {
+            0%, 100% {
+                transform: translateY(0) rotateY(0);
+            }
+            50% {
+                transform: translateY(-10px) rotateY(10deg);
+            }
+        }
+
+        .logo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            position: absolute;
+            backface-visibility: hidden;
+            transition: all 0.5s ease;
+            box-shadow: 0 0 20px rgba(0, 168, 255, 0.3);
+        }
+
+        .logo-glitch {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            background: rgba(0, 168, 255, 0.2);
+            animation: glitchEffect 2s infinite;
+        }
+
+        @keyframes glitchEffect {
+            0% {
+                transform: translate(0);
+                opacity: 0.5;
+            }
+            20% {
+                transform: translate(-5px, 5px);
+                opacity: 0.75;
+                background: rgba(0, 255, 127, 0.2);
+            }
+            40% {
+                transform: translate(5px, -5px);
+                opacity: 0.5;
+                background: rgba(0, 168, 255, 0.2);
+            }
+            60% {
+                transform: translate(-5px, -5px);
+                opacity: 0.75;
+                background: rgba(255, 0, 127, 0.2);
+            }
+            80% {
+                transform: translate(5px, 5px);
+                opacity: 0.5;
+                background: rgba(0, 168, 255, 0.2);
+            }
+            100% {
+                transform: translate(0);
+                opacity: 0.5;
+            }
+        }
+
+        .logo-wrapper:hover {
+            animation-play-state: paused;
+        }
+
+        .logo-wrapper:hover .logo {
+            transform: scale(1.1);
+        }
+
+        .logo-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            background: linear-gradient(45deg, #00a8ff, #00ff7f, #ff0080);
+            border-radius: 50%;
+            z-index: -1;
+            animation: borderGlow 3s linear infinite;
+        }
+
+        @keyframes borderGlow {
+            0% {
+                transform: rotate(0deg);
+                filter: hue-rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        h1 {
+            color: #00a8ff;
+            margin-bottom: 15px;
+            font-size: 2.8em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px rgba(0, 168, 255, 0.5);
+            animation: titleGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% {
+                text-shadow: 0 0 15px rgba(0, 168, 255, 0.5);
+            }
+            50% {
+                text-shadow: 0 0 30px rgba(0, 168, 255, 0.8);
+            }
+        }
+
+        .subtitle {
+            color: #e0e0e0;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(224, 224, 224, 0.3);
+        }
+
+        .announcement-date {
+            color: #95a5a6;
+            font-size: 1em;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        .section {
+            background: rgba(30, 34, 42, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(45, 52, 54, 0.5);
+            backdrop-filter: blur(10px);
+            transform: translateZ(0);
+        }
+
+        .section-title {
+            color: #00a8ff;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #00a8ff;
+            text-shadow: 0 0 15px rgba(0, 168, 255, 0.3);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #00a8ff, transparent);
+            animation: borderFlow 2s linear infinite;
+        }
+
+        .members-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .member-card {
+            background: rgba(45, 52, 54, 0.95);
+            padding: 25px;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            border-left: 4px solid #00a8ff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .member-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 168, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+
+        .member-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 168, 255, 0.2);
+            border-left: 4px solid #00ff7f;
+        }
+
+        .member-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .member-name {
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .member-class {
+            color: #95a5a6;
+            font-size: 1em;
+        }
+
+        .congratulation {
+            text-align: center;
+            padding: 30px;
+            color: #e0e0e0;
+            font-style: italic;
+            margin-top: 40px;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            font-size: 1.2em;
+            position: relative;
+            background: rgba(30, 34, 42, 0.8);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 768px) {
+            .logo-container {
+                gap: 40px;
+            }
+
+            .logo-wrapper {
+                width: 100px;
+                height: 100px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .member-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <div class="logo-wrapper">
+                    <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGxhdWVnb3dhbHAzb2FvaTduZWtxaDMyZnRxcDhnNG9iZTNtYjEzeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6okZvX026xTenJYxRq/giphy.webp" alt="Logo Sekolah" class="logo">
+                    <div class="logo-glitch"></div>
+                </div>
+                <div class="logo-wrapper">
+                    <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjZuNDB2NjB4MjJ6azVhc3NzcnU4aHc5aGtjcjJ3aTVrNXBvcmJqbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KoBXetBe3G8oyXxe1h/giphy.webp" alt="Logo OSIS" class="logo">
+                    <div class="logo-glitch"></div>
+                </div>
+            </div>
+            <h1>PENGUMUMAN RESMI</h1>
+            <div class="subtitle">Anggota OSIS Terpilih</div>
+            <div class="subtitle">Periode 2024/2025</div>
+            <div class="announcement-date">Diumumkan pada: 24 Oktober 2024</div>
+        </div>
+
+        <div class="section">
+    <h2 class="section-title">Kelas 8</h2>
+    <div class="members-list">
+        <div class="member-card">
+            <div class="member-name">Ella Nur Aisyah</div>
+            <div class="member-class">Kelas 8A</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Aini Wulandari</div>
+            <div class="member-class">Kelas 8H</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Muhammad Al Umar</div>
+            <div class="member-class">Kelas 8I</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Haikal Rayhan Maulana</div>
+            <div class="member-class">Kelas 8</div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2 class="section-title">Kelas 7</h2>
+    <div class="members-list">
+        <!-- Kelas 7A -->
+        <div class="member-card">
+            <div class="member-name">Akhmad Mussaril Alsa'Baniyah</div>
+            <div class="member-class">Kelas 7A</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Mohammad Fahrudin</div>
+            <div class="member-class">Kelas 7A</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Nur Indah Putri P</div>
+            <div class="member-class">Kelas 7A</div>
+        </div>
+        
+        <!-- Kelas 7B -->
+        <div class="member-card">
+            <div class="member-name">Elina Queennaiza R</div>
+            <div class="member-class">Kelas 7B</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Humairah Dhea A</div>
+            <div class="member-class">Kelas 7B</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Shifa Auliya</div>
+            <div class="member-class">Kelas 7B</div>
+        </div>
+        
+        <!-- Kelas 7C -->
+        <div class="member-card">
+            <div class="member-name">Ahmad Khadavi Aimar Machrus</div>
+            <div class="member-class">Kelas 7C</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Azra Khansa Akila</div>
+            <div class="member-class">Kelas 7C</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Erika Adelia Putri</div>
+            <div class="member-class">Kelas 7C</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Nur Salsabila</div>
+            <div class="member-class">Kelas 7C</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Surya Adi N.</div>
+            <div class="member-class">Kelas 7C</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Wahyu Putra Pratama</div>
+            <div class="member-class">Kelas 7C</div>
+        </div>
+        
+        <!-- Kelas 7D -->
+        <div class="member-card">
+            <div class="member-name">Annisa Zakiyyatun N</div>
+            <div class="member-class">Kelas 7D</div>
+        </div>
+        
+        <!-- Kelas 7E -->
+        <div class="member-card">
+            <div class="member-name">Delisa Zulfatur R</div>
+            <div class="member-class">Kelas 7E</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Kanaya Meidina Aurora</div>
+            <div class="member-class">Kelas 7E</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">M. Fitzal Asfa M</div>
+            <div class="member-class">Kelas 7E</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Shyfa Erlinda Ichiwan</div>
+            <div class="member-class">Kelas 7E</div>
+        </div>
+        
+        <!-- Kelas 7F -->
+        <div class="member-card">
+            <div class="member-name">Muazara Cahaya R.</div>
+            <div class="member-class">Kelas 7F</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Silvia Ramadhani</div>
+            <div class="member-class">Kelas 7F</div>
+        </div>
+        
+        <!-- Kelas 7G -->
+        <div class="member-card">
+            <div class="member-name">Cindi Aprilia Lestari</div>
+            <div class="member-class">Kelas 7G</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Divana Syahla Syahra</div>
+            <div class="member-class">Kelas 7G</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Farichah Mukhmilah</div>
+            <div class="member-class">Kelas 7G</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Nadia Zahra Ibaneztia I</div>
+            <div class="member-class">Kelas 7G</div>
+        </div>
+        
+        <!-- Kelas 7H -->
+        <div class="member-card">
+            <div class="member-name">Nadia Azzania Firdausi</div>
+            <div class="member-class">Kelas 7H</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Nazila Zakiatil Fakhiroh</div>
+            <div class="member-class">Kelas 7H</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Salsabila Noviani</div>
+            <div class="member-class">Kelas 7H</div>
+        </div>
+        
+        <!-- Kelas 7J -->
+        <div class="member-card">
+            <div class="member-name">Puteri Nabila</div>
+            <div class="member-class">Kelas 7J</div>
+        </div>
+        
+        <!-- Kelas 7K -->
+        <div class="member-card">
+            <div class="member-name">Qonita Aza Zainiyah</div>
+            <div class="member-class">Kelas 7K</div>
+        </div>
+        <div class="member-card">
+            <div class="member-name">Syifa Maharani</div>
+            <div class="member-class">Kelas 7K</div>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="congratulation">
+            Selamat kepada atas terpilihnya menjadi anggota osis SMP NEGERI 1 BEJI🤩
